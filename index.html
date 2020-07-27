@@ -16,12 +16,18 @@
   <h1 id="timer">90</h1>
 
   <script>
+    // Number of seconds you will have to complete the quix (90)
     let timer = 90
 
 // Timer function
-    setInterval(() => {
+    let myInterval = setInterval(() => {
       timer--
       document.getElementById('timer').textContent = timer
+
+      if (timer <= 0) {
+        alert ('Your time is up!')
+        clearInterval(myInterval)
+      }
     }, 1000)
   </script>
 
