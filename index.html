@@ -14,20 +14,26 @@
 <body>
 
   <h1 id="timer">90</h1>
+  <h2> ^ Amount of time left</h2>
 
   <script>
     // Number of seconds you will have to complete the quix (90)
     let timer = 90
 
-// Timer function
+    // Timer function interval to count down the remaining time by intervals of one second
     let myInterval = setInterval(() => {
+      // -- signifies counting down by intervals of one
       timer--
+      // Shows how much time is left in countdown
       document.getElementById('timer').textContent = timer
-
+      // Sets up conditional for what happens when time runs out
       if (timer <= 0) {
-        alert ('Your time is up!')
+        // Alert prompt for when the 90 seconds has expired
+        alert('Your time is up!')
+        // Clears the prompt and stops the function from running
         clearInterval(myInterval)
       }
+      // Sets format to count down by 1 second intervals (1000ms=1sec)
     }, 1000)
   </script>
 
